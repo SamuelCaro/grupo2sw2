@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/history")
 public class HistoryController {
 
+
     @GetMapping(value = {"","/"})
     public String historialEmpleado(){
         //COMPLETAR
+        return;
     }
-
-
 
 }
