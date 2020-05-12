@@ -39,8 +39,12 @@ public class EmployeeController {
     }
 
     @GetMapping("/new")
-    public String nuevoEmployeeForm() {
-        //COMPLETAR
+    public String nuevoEmployeeForm(@ModelAttribute("employees") Employees employees, Model model) {
+
+        model.addAttribute("listaDepartments", departmentsRepository.findAll());
+        model.addAttribute("listaJobs", jobsRepository.findAll());
+        model.addAttribute("listaEmployee", employeesRepository.findAll());
+
         return "employee/Frm";
     }
 
