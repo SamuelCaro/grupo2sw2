@@ -30,6 +30,7 @@ public class EmployeeController {
     @Autowired
     DepartmentsRepository departmentsRepository;
 
+
     @GetMapping(value = {"","/"})
     public String listaEmployee(Model model){
         model.addAttribute("listaEmployee", employeesRepository.findAll());
@@ -106,5 +107,13 @@ public class EmployeeController {
 
         //COMPLETAR
     }
+
+    @GetMapping(value = {"/recursosHumanos"})
+    public String recursosHumanos(Model model){
+        model.addAttribute("listaRecursosHumanos", employeesRepository.obtenerRecursosHumanos());
+        model.addAttribute("listaRecursosHumanosActivos",employeesRepository.obtenerRecursosHumanosActivos());
+        return "history/lista";
+    }
+
 
 }

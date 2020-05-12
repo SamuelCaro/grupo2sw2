@@ -11,20 +11,53 @@
 <body>
 <div class="container">
     <h1>Recursos Humanos</h1>
-    <a class="btn btn-primary mt-4 mb-4" th:href="@{}">Nuevo Registro</a>
-
-        <table class="table">
-        <thead>
+    <h2>Recursos Humanos Finalizados</h2>
+    <table class="table table-sm">
         <tr>
-            <!-- COMPLETAR-->
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Hire_date</th>
+            <th>End_date</th>
+            <th>Años trabajados</th>
+            <th>Meses trabajados</th>
         </tr>
-        </thead>
-        <tbody>
-        <tr th:each="historia : ${listaHistorial}">
-        <!-- COMPLETAR-->
+        <tr th:each="recursoHumano : ${listaRecursosHumanos}">
+            <td th:text="${recursoHumano.getNombre()}"></td>
+            <td th:text="${recursoHumano.getApellido()}"></td>
+            <td th:text="${recursoHumano.getFechaInicio()}"></td>
+            <td th:text="${recursoHumano.getFechaFin()}"></td>
+            <td th:text="${recursoHumano.getAñosTrabajados()}"></td>
+            <td th:text="${recursoHumano.getMesesTrabajados()}"></td>
         </tr>
-        </tbody>
     </table>
+
+    <h2>Recursos Humanos Activos</h2>
+    <table class="table table-sm">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Hire_date</th>
+            <th>End_date</th>
+            <th>Años trabajados</th>
+            <th>Meses trabajados</th>
+        </tr>
+        <tr th:each="recursoHumano2 : ${listaRecursosHumanosActivos}">
+            <td th:text="${recursoHumano2.getNombre()}"></td>
+            <td th:text="${recursoHumano2.getApellido()}"></td>
+            <td th:text="${recursoHumano2.getFechaInicio()}"></td>
+            <td th:text="${recursoHumano2.getFechaFin()}"></td>
+            <td th:text="${recursoHumano2.getAñosTrabajados()}"></td>
+            <td th:text="${recursoHumano2.getMesesTrabajados()}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+
+</tr>
+</tbody>
+</table>
 </div>
 </body>
 </html>
